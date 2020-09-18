@@ -1,36 +1,44 @@
-"use strict";
-/*
-console.log('Hello world!');
+/* Задание на урок:
 
-//alert("some code");
+1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+'Сколько фильмов вы уже посмотрели?'
 
-let number = 5;
-const lefBorderWidth = 1;
+2) Создать объект personalMovieDB и в него поместить такие свойства:
+    - count - сюда передается ответ на первый вопрос
+    - movies - в это свойство поместить пустой объект
+    - actors - тоже поместить пустой объект
+    - genres - сюда поместить пустой массив
+    - privat - в это свойство поместить boolean(логическое) значение false
 
-console.log(number);
+3) Задайте пользователю по два раза вопросы:
+    - 'Один из последних просмотренных фильмов?'
+    - 'На сколько оцените его?'
+Ответы стоит поместить в отдельные переменные
+Записать ответы в объект movies в формате: 
+    movies: {
+        'logan': '8.1'
+    }
 
-const obj = {
-    a: 50    
+Проверить, чтобы все работало без ошибок в консоли */
+
+'use strict';
+
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?','');
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
 };
 
-obj.a = 10;
+const   a = prompt('Один из последних просмотренных фильмов?',''),
+        b = prompt('На сколько оцените его?',''),
+        c = prompt('Один из последних просмотренных фильмов?',''),
+        d = prompt('На сколько оцените его?','');
 
-console.log(obj);
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
 
-const objMan = {
-    name: "John",
-    age: 25,
-    isMarried: false   
-};
-
-console.log(objMan.name);
-console.log(objMan["age"]);
-*/
-
-const answers = [];
-
-answers[0] = prompt("Как ваше имя?","");
-answers[1] = prompt("Какая у вас фамилия?","");
-answers[2] = prompt("Сколько вам лет?","");
-
-document.write(answers);
+console.log(personalMovieDB);
